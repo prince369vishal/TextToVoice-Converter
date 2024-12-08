@@ -19,7 +19,6 @@ let speech = new SpeechSynthesisUtterance();
 // The voices will be retrieved dynamically from the SpeechSynthesis API.
 let voices = [];
 
-// Step 3: Reference the dropdown element in the HTML
 // This <select> element will allow the user to choose a voice for the speech.
 let voiceSelect = document.querySelector("select");
 
@@ -34,7 +33,7 @@ window.speechSynthesis.onvoiceschanged = () => {
   // Populate the dropdown menu with the names of available voices
   // Each option's value corresponds to the index of the voice in the `voices` array
   voices.forEach(
-    (voice, i) => (voiceSelect.options[i] = new Option(voice.name))
+    (voice, i) => (voiceSelect.options[i] = new Option(voice.name, i))
   );
 };
 
